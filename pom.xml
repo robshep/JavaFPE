@@ -5,6 +5,16 @@
   <version>1.0.0</version>
   <name>FPE for Java</name>
   <description>Basic BigInteger-base Format Preserving Encryption based on "Format-Preserving Encryption" by Bellare, Rogaway, et al.
-
-ported from a .Net implementation ( http://dotfpe.codeplex.com ) which was based on the Botan library ( http://botan.randombit.net/fpe.html )</description>
+    ported from a .Net implementation ( http://dotfpe.codeplex.com ) which was based on the Botan library ( http://botan.randombit.net/fpe.html )
+  </description>
+  
+  
+  <dependencies>
+      <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	    <scope>test</scope>
+	</dependency>
+  </dependencies>
 </project>
