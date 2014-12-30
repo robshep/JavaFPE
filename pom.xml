@@ -1,0 +1,10 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net._95point2.fpe</groupId>
+  <artifactId>fpe</artifactId>
+  <version>1.0.0</version>
+  <name>FPE for Java</name>
+  <description>Basic BigInteger-base Format Preserving Encryption based on "Format-Preserving Encryption" by Bellare, Rogaway, et al.
+
+ported from a .Net implementation ( http://dotfpe.codeplex.com ) which was based on the Botan library ( http://botan.randombit.net/fpe.html )</description>
+</project>

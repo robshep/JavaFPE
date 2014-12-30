@@ -1,4 +1,28 @@
-package net._95point2.fpe
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014,2015 Rob Shepherd
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package net._95point2.fpe;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,6 +33,14 @@ import java.util.Set;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
+/**
+ * Software derived from a New-BSD licensed implementation for .NET http://dotfpe.codeplex.com
+ *	... That in turn was ported from the Botan library http://botan.randombit.net/fpe.html.
+ *	... Using the scheme FE1 from the paper "Format-Preserving Encryption" by Bellare, Rogaway, et al. (http://eprint.iacr.org/2009/251)
+ *
+ * @author Rob Shepherd
+ *
+ */
 public class FPE 
 {
     public static void main(String[] args) throws Exception 
