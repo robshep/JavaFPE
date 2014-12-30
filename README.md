@@ -12,24 +12,28 @@ So, the real credit is due to all authors in the chain!
 
 ## Usage
 ```java
-import net._95point2.fpe.FPE
 
-public static void main(String[] args) throws Exception 
+import java.math.BigInteger;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import net._95point2.fpe.FPE;
+
+public class FPETests 
 {
-    final int range = 10000;   // thus preserves the output range:  0 <= output < 10000
-    final byte[] key = "Here is my secret key!".getBytes();
-    final byte[] tweak = "tweak".getBytes();
-    final BigInteger modulus = BigInteger.valueOf(range);
+	@Test
+	public void testBasic() throws Exception
+	{
+		final byte[] key = "Here is my secret key!".getBytes();
+	    final byte[] tweak = "tweak".getBytes();
+	    final int range = 1000;
+		final BigInteger modulus = BigInteger.valueOf(range);
+			
+		BigInteger enc = FPE.encrypt(modulus, BigInteger.valueOf(345L), key, tweak);
+		BigInteger dec = FPE.decrypt(modulus, enc, key, tweak);
 
-    
-
-    BigInteger enc = encrypt(modulus, BigInteger.valueOf(i), key, tweak);
-    BigInteger dec = decrypt(modulus, enc, key, tweak);
-    
-    System.out.println("
-    
-    if(enc.compareTo(dec) != 0){
-        throw new IllegalStateException("Broken Implementation :( ");
-    }
+		Assert.assertTrue( enc.compareTo(dec) == 0 );
+	}
 }
 ```
