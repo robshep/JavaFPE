@@ -20,7 +20,7 @@ import org.junit.Test;
 
 import net._95point2.fpe.FPE;
 
-public class FPETests 
+public class FPETests
 {
 	@Test
 	public void testBasic() throws Exception
@@ -29,11 +29,12 @@ public class FPETests
 	    final byte[] tweak = "tweak".getBytes();
 	    final int range = 1000;
 		final BigInteger modulus = BigInteger.valueOf(range);
-			
-		BigInteger enc = FPE.encrypt(modulus, BigInteger.valueOf(345L), key, tweak);
+		
+		BigInteger plain = BigInteger.valueOf(345);
+		BigInteger enc = FPE.encrypt(modulus, plain, key, tweak);
 		BigInteger dec = FPE.decrypt(modulus, enc, key, tweak);
 
-		Assert.assertTrue( enc.compareTo(dec) == 0 );
+		Assert.assertTrue( dec.compareTo(plain) == 0 );
 	}
 }
 ```
