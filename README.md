@@ -38,3 +38,40 @@ public class FPETests
 	}
 }
 ```
+
+## Modulus
+
+The modulus prescribes the range of numbers and is always powers of ten.
+If the input range is 0 <= range <= 999
+then then modulus must be set to 1000
+
+### Example Output
+
+```
+Testing modulus: 0 -> 100
+Plain: 35 Encrypted: 83
+Plain: 35 Encrypted: 83
+Plain: 7 Encrypted: 27
+Plain: 53 Encrypted: 0
+Plain: 32 Encrypted: 96
+
+Testing modulus: 0 -> 1000
+Plain: 520 Encrypted: 636
+Plain: 754 Encrypted: 359
+Plain: 580 Encrypted: 152
+Plain: 855 Encrypted: 12
+Plain: 926 Encrypted: 190
+
+Testing modulus: 0 -> 10000
+Plain: 2868 Encrypted: 10
+Plain: 5210 Encrypted: 3455
+Plain: 9410 Encrypted: 4502
+Plain: 4864 Encrypted: 1730
+Plain: 4974 Encrypted: 3599
+```
+
+## Further Notes
+
+* When using a modulus of 100 and numbers in the range 0 <= range <= 99, there will usually be a collision where input==output.  
+
+
