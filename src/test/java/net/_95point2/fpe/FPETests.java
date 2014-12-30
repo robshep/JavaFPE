@@ -58,6 +58,41 @@ public class FPETests
 	}
 	
 	@Test
+	public void testSampleRanges() throws Exception
+	{
+		final byte[] key = "Here is my secret key!".getBytes();
+	    final byte[] tweak = "tweak".getBytes();
+	    
+	    Random rand = new Random();
+	    
+		for(int pow=2;pow<5;pow++)
+		{
+			int power = (int) Math.pow(10, pow);
+			
+			final int range = power;   // thus preserves the output range:  0 <= output < range
+			final BigInteger modulus = BigInteger.valueOf(range);
+			
+			System.out.println("Testing modulus: 0 -> " + power);
+			int count = 0;
+			for(int i=0;i<5;i++){
+				
+				BigInteger plain = BigInteger.valueOf(rand.nextInt(range));
+			    BigInteger enc = FPE.encrypt(modulus, plain, key, tweak);
+			    BigInteger dec = FPE.decrypt(modulus, enc, key, tweak);
+
+			    System.out.println("Plain: " + plain + " Encrypted: " + enc);
+			    
+			    Assert.assertTrue( plain.compareTo(dec) == 0 );
+			    
+			    Assert.assertTrue(enc.compareTo(BigInteger.ZERO) >= 0);
+			    Assert.assertTrue( enc.compareTo(modulus) < 0);
+			    count++;
+			}
+			
+		}
+	}
+	
+	@Test
 	public void testKey() throws Exception
 	{
 		final byte[] key1 = "I've got the key, I've got the secret".getBytes();
